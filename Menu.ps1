@@ -8,7 +8,10 @@ if ($env:SystemDrive -ne "X:") {
 $WC = New-Object System.Net.WebClient
 $WC.DownloadString("https://raw.githubusercontent.com/OSDeploy/OSD/21.3.5.2/Public/Disk/Get-LocalPartition.ps1")
 
-Invoke-Expression -Command $WC.DownloadString("https://raw.githubusercontent.com/OSDeploy/OSD/21.3.5.2/Public/Disk/Get-LocalPartition.ps1")
+Invoke-Expression $WC.DownloadString("https://raw.githubusercontent.com/OSDeploy/OSD/21.3.5.2/Public/Disk/Get-LocalPartition.ps1")
+Pause
+Invoke-Expression ($WC.DownloadString("https://raw.githubusercontent.com/OSDeploy/OSD/21.3.5.2/Public/Disk/Get-LocalPartition.ps1"))
+Pause
 Break
 
 $GetPSScriptRoot = Get-Item $PSScriptRoot
